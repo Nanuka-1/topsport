@@ -34,7 +34,7 @@ while True:
 # 3 დავალება
 
 import logging
-import json
+import json_task
 
 logging.basicConfig(
     filename="game.log",

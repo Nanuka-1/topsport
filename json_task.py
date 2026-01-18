@@ -11,16 +11,13 @@ json_data = """
 ]
 """
 
-
 products = json.loads(json_data)
 
 expensive_products = [product for product in products if product["price"] > 100]
 
-
 print("ძვირი პროდუქტები (ფასი > 100):")
 for item in expensive_products:
     print(f"ID: {item['id']}, ფასი: {item['price']}")
-
 
 # 2 დავალება
 
@@ -59,11 +56,9 @@ for department in data["company"]["departments"]:
 
 print(names)
 
-
-#3 დავალება
+# 3 დავალება
 
 import json
-
 
 json_data = """
 [
@@ -72,7 +67,6 @@ json_data = """
   {"name": "Nino", "grades": [100, 95, 99]}
 ]
 """
-
 
 students = json.loads(json_data)
 
@@ -116,15 +110,12 @@ json_data = """
 """
 data = json.loads(json_data)
 
-
 for company in data["companies"]:
     company_name = company["name"]
 
     for employee in company["employees"]:
         if employee["salary"] > 4000:
             print(f"{employee['name']} - {company_name}")
-
-
 
 # 5 დავალება
 
@@ -157,7 +148,6 @@ if response.status_code == 201:
 else:
     print("შეცდომა:", response.status_code)
 
-
 # 7 დავალება
 
 import requests
@@ -179,18 +169,14 @@ try:
 except Exception as e:
     print("შეცდომა:", e)
 
-
-
-
 # 8 დავალება
 import requests
-
 
 POSTS_URL = "https://jsonplaceholder.typicode.com/posts"
 USERS_URL = "https://jsonplaceholder.typicode.com/users"
 
 try:
-    #GET posts and users
+
     posts_response = requests.get(POSTS_URL)
     users_response = requests.get(USERS_URL)
 
@@ -200,10 +186,8 @@ try:
     posts = posts_response.json()
     users = users_response.json()
 
-    # Create dict: userId -> user name
     users_dict = {user["id"]: user["name"] for user in users}
 
-    # 3. Print first 5 posts
     print(" პირველი 5 პოსტი და მათი ავტორები:\n")
     for post in posts[:5]:
         title = post["title"]
@@ -214,4 +198,3 @@ try:
 
 except requests.exceptions.RequestException as e:
     print("შეცდომა მონაცემების წამოღებისას:", e)
-
